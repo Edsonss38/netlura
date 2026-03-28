@@ -1,0 +1,234 @@
+/* Estilos inspirados na Netflix */
+
+@import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #141414;
+  --text-color: #ffffff;
+  --hover-color: #e50914;
+}
+
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --hover-color: #e50914;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Netflix Sans', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  position: relative;
+}
+
+main {
+  text-align: center;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.profile {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.profile:hover,
+.profile:focus {
+  transform: scale(1.1);
+  outline: 2px solid var(--hover-color);
+  outline-offset: 4px;
+}
+
+.profile figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.light-mode .profile img {
+  border-color: #141414;
+}
+
+.profile:hover img {
+  border-color: var(--hover-color);
+}
+
+.profile figcaption {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  color: var(--hover-color);
+}
+
+/* ============== RESPONSIVIDADE ============== */
+
+/* Mobile pequeno - até 480px */
+@media (max-width: 480px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .profiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .profile img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile médio - 481px a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .profiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile figcaption {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet - 769px a 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    max-width: 900px;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .profiles {
+    gap: 1.5rem;
+  }
+
+  .profile img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .profile figcaption {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop grande - acima de 1025px */
+@media (min-width: 1025px) {
+  main {
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .profiles {
+    gap: 2rem;
+  }
+
+  .profile img {
+    width: 150px;
+    height: 150px;
+  }
+}
