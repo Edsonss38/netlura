@@ -4,7 +4,7 @@
 O **NetLura** é uma página de seleção de perfis inspirada na interface da Netflix, permitindo que o usuário escolha um perfil antes de acessar o catálogo de conteúdos.
 
 ## 🌐 Acesse o Projeto
-👉 https://edsonss38.github.io/netlura/
+[![Site Online](https://img.shields.io/badge/Site-Online-blue)](https://edsonss38.github.io/netlura/)
 
 ## ✨ Funcionalidades
 - 👤 Seleção de perfis de usuário  
