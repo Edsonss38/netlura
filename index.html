@@ -7,13 +7,19 @@
     <title>NetLura</title>
   </head>
   <body>
+    <!-- Conteúdo principal da página -->
     <main>
+      <!-- Botão para alternar entre modo escuro e claro -->
       <button id="theme-toggle" aria-label="Alternar modo escuro/claro">
         🌙
       </button>
+      <!-- Título principal da página -->
       <h1>Quem está assistindo?</h1>
+      <!-- Seção que contém os perfis de usuário disponíveis -->
       <section aria-label="Perfis disponíveis">
+        <!-- Lista não ordenada contendo todos os perfis -->
         <ul class="profiles">
+          <!-- Primeiro perfil: Linus T. - leva ao catálogo -->
           <li>
             <a href="catalogo/catalogo.html" class="profile" target="_blank">
               <figure>
@@ -25,6 +31,7 @@
               </figure>
             </a>
           </li>
+          <!-- Segundo perfil: Ada L. - perfil inativo (href="#") -->
           <li>
             <a href="#" class="profile">
               <figure>
@@ -36,6 +43,7 @@
               </figure>
             </a>
           </li>
+          <!-- Terceiro perfil: Alan T. - perfil inativo -->
           <li>
             <a href="#" class="profile">
               <figure>
@@ -47,6 +55,7 @@
               </figure>
             </a>
           </li>
+          <!-- Quarto perfil: Tim B. - perfil inativo -->
           <li>
             <a href="#" class="profile">
               <figure>
@@ -62,6 +71,8 @@
       </section>
     </main>
 
+    <!-- Script JavaScript para funcionalidades interativas -->
     <script src="js/script.js" defer></script>
+    <!-- defer: executa o script após o HTML ser completamente carregado -->
   </body>
 </html>

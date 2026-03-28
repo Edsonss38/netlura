@@ -2,116 +2,138 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap');
 
+/* ============== VARIÁVEIS CSS ============== */
+/* Variáveis para facilitar manutenção e alternância de tema */
 :root {
-  --bg-color: #141414;
-  --text-color: #ffffff;
-  --hover-color: #e50914;
+  --bg-color: #141414; /* Cor de fundo escura (modo escuro) */
+  --text-color: #ffffff; /* Cor do texto clara */
+  --hover-color: #e50914; /* Vermelho Netflix para destaques */
 }
 
+/* Modo claro - sobrescreve as variáveis do :root */
 .light-mode {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --hover-color: #e50914;
+  --bg-color: #ffffff; /* Fundo branco no modo claro */
+  --text-color: #000000; /* Texto preto no modo claro */
+  --hover-color: #e50914; /* Mantém o vermelho Netflix */
 }
 
+/* ============== RESET E BASE ============== */
+/* Reset básico para consistência entre navegadores */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Inclui padding e border na largura/altura total */
 }
 
+/* Estilos do corpo da página */
 body {
-  font-family: 'Netflix Sans', Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  font-family:
+    'Netflix Sans', Arial, sans-serif; /* Fonte Netflix com fallback */
+  background-color: var(--bg-color); /* Fundo variável (escuro/claro) */
+  color: var(--text-color); /* Texto variável */
+  height: 100vh; /* Altura total da viewport */
+  display: flex; /* Layout flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  overflow: hidden; /* Remove scroll */
   transition:
     background-color 0.3s ease,
-    color 0.3s ease;
-  position: relative;
+    color 0.3s ease; /* Transições suaves */
+  position: relative; /* Para posicionamento absoluto do botão */
 }
 
+/* ============== CONTEÚDO PRINCIPAL ============== */
+/* Container principal do conteúdo */
 main {
-  text-align: center;
-  max-width: 1200px;
-  padding: 20px;
+  text-align: center; /* Centraliza texto */
+  max-width: 1200px; /* Largura máxima */
+  padding: 20px; /* Espaçamento interno */
 }
 
+/* Título principal */
 h1 {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  color: var(--text-color);
+  font-size: 3rem; /* Tamanho grande */
+  margin-bottom: 3rem; /* Espaço inferior */
+  color: var(--text-color); /* Cor variável */
 }
 
+/* ============== PERFIS ============== */
+/* Container dos perfis - layout flexível */
 .profiles {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  list-style: none;
+  display: flex; /* Layout flexbox */
+  justify-content: center; /* Centraliza itens */
+  gap: 2rem; /* Espaço entre perfis */
+  flex-wrap: wrap; /* Quebra linha se necessário */
+  list-style: none; /* Remove marcadores da lista */
 }
 
+/* Estilo base dos links de perfil */
 .profile {
-  text-decoration: none;
-  color: var(--text-color);
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  text-decoration: none; /* Remove sublinhado */
+  color: var(--text-color); /* Cor variável */
+  transition: transform 0.3s ease; /* Animação de escala */
+  cursor: pointer; /* Cursor de ponteiro */
 }
 
+/* Efeitos de hover e foco nos perfis */
 .profile:hover,
 .profile:focus {
-  transform: scale(1.1);
-  outline: 2px solid var(--hover-color);
-  outline-offset: 4px;
+  transform: scale(1.1); /* Aumenta 10% no hover */
+  outline: 2px solid var(--hover-color); /* Contorno vermelho */
+  outline-offset: 4px; /* Espaço do contorno */
 }
 
+/* Estrutura da figura (imagem + legenda) */
 .profile figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Layout flexbox */
+  flex-direction: column; /* Itens em coluna */
+  align-items: center; /* Centraliza horizontalmente */
 }
 
+/* Imagens dos perfis */
 .profile img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid transparent;
-  transition: border-color 0.3s ease;
+  width: 150px; /* Largura fixa */
+  height: 150px; /* Altura fixa */
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover; /* Corta imagem para caber */
+  border: 3px solid transparent; /* Borda transparente */
+  transition: border-color 0.3s ease; /* Transição da borda */
 }
 
+/* Borda da imagem no modo claro */
 .light-mode .profile img {
-  border-color: #141414;
+  border-color: #141414; /* Borda escura no modo claro */
 }
 
+/* Borda da imagem no hover */
 .profile:hover img {
-  border-color: var(--hover-color);
+  border-color: var(--hover-color); /* Borda vermelha no hover */
 }
 
+/* Legendas dos perfis */
 .profile figcaption {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: 400;
+  margin-top: 1rem; /* Espaço superior */
+  font-size: 1.2rem; /* Tamanho do texto */
+  font-weight: 400; /* Peso normal */
 }
 
+/* ============== BOTÃO DE TEMA ============== */
+/* Botão de alternância escuro/claro */
 #theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: color 0.3s ease;
+  position: absolute; /* Posicionamento absoluto */
+  top: 20px; /* 20px do topo */
+  right: 20px; /* 20px da direita */
+  background: none; /* Sem fundo */
+  border: none; /* Sem borda */
+  font-size: 1.5rem; /* Tamanho do emoji */
+  cursor: pointer; /* Cursor de ponteiro */
+  color: var(--text-color); /* Cor variável */
+  transition: color 0.3s ease; /* Transição de cor */
 }
 
+/* Hover do botão de tema */
 #theme-toggle:hover {
-  color: var(--hover-color);
+  color: var(--hover-color); /* Cor vermelha no hover */
 }
 
 /* ============== RESPONSIVIDADE ============== */
@@ -119,112 +141,112 @@ h1 {
 /* Mobile pequeno - até 480px */
 @media (max-width: 480px) {
   body {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
+    height: auto; /* Altura automática */
+    min-height: 100vh; /* Mínimo altura da viewport */
+    padding: 20px 0; /* Padding vertical */
   }
 
   main {
-    padding: 15px;
+    padding: 15px; /* Padding reduzido */
   }
 
   h1 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem; /* Título menor */
+    margin-bottom: 2rem; /* Margem inferior reduzida */
   }
 
   .profiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    max-width: 260px;
-    margin: 0 auto;
+    display: grid; /* Muda para grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 1rem; /* Gap menor */
+    max-width: 260px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza */
   }
 
   .profile img {
-    width: 90px;
+    width: 90px; /* Imagens menores */
     height: 90px;
   }
 
   .profile figcaption {
-    margin-top: 0.8rem;
-    font-size: 0.9rem;
+    margin-top: 0.8rem; /* Margem superior menor */
+    font-size: 0.9rem; /* Texto menor */
   }
 }
 
 /* Mobile médio - 481px a 768px */
 @media (min-width: 481px) and (max-width: 768px) {
   body {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px 0;
+    height: auto; /* Altura automática */
+    min-height: 100vh; /* Mínimo altura da viewport */
+    padding: 20px 0; /* Padding vertical */
   }
 
   main {
-    padding: 20px;
+    padding: 20px; /* Padding normal */
   }
 
   h1 {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
+    font-size: 2rem; /* Título médio */
+    margin-bottom: 2.5rem; /* Margem média */
   }
 
   .profiles {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 380px;
-    margin: 0 auto;
+    display: grid; /* Layout em grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 1.5rem; /* Gap médio */
+    max-width: 380px; /* Largura média */
+    margin: 0 auto; /* Centraliza */
   }
 
   .profile img {
-    width: 120px;
+    width: 120px; /* Imagens médias */
     height: 120px;
   }
 
   .profile figcaption {
-    font-size: 1rem;
+    font-size: 1rem; /* Texto normal */
   }
 }
 
 /* Tablet - 769px a 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
   main {
-    max-width: 900px;
-    padding: 30px;
+    max-width: 900px; /* Largura reduzida para tablet */
+    padding: 30px; /* Padding maior */
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.5rem; /* Título médio-grande */
+    margin-bottom: 2.5rem; /* Margem média */
   }
 
   .profiles {
-    gap: 1.5rem;
+    gap: 1.5rem; /* Gap médio */
   }
 
   .profile img {
-    width: 130px;
+    width: 130px; /* Imagens médias */
     height: 130px;
   }
 
   .profile figcaption {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Texto um pouco maior */
   }
 }
 
 /* Desktop grande - acima de 1025px */
 @media (min-width: 1025px) {
   main {
-    max-width: 1200px;
+    max-width: 1200px; /* Largura máxima */
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Título grande */
   }
 
   .profiles {
-    gap: 2rem;
+    gap: 2rem; /* Gap normal */
   }
 
   .profile img {
