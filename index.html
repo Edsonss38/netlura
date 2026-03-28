@@ -1,72 +1,95 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <!-- Configuração básica -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- SEO (descrição da página) -->
     <meta
       name="description"
       content="NetLura - Página de perfis inspirada na Netflix para seleção de usuários."
     />
+
+    <!-- Título da aba -->
     <title>NetLura</title>
   </head>
+
   <body>
-    <!-- Conteúdo principal da página -->
     <main>
-      <!-- Botão para alternar entre modo escuro e claro -->
+      <!-- Botão de alternar tema (dark/light) -->
       <button id="theme-toggle" aria-label="Alternar modo escuro/claro">
         🌙
       </button>
-      <!-- Título principal da página -->
+
+      <!-- Título principal -->
       <h1>Quem está assistindo?</h1>
-      <!-- Seção que contém os perfis de usuário disponíveis -->
+
+      <!-- Seção de perfis -->
       <section aria-label="Perfis disponíveis">
-        
-        <!-- Lista não ordenada contendo todos os perfis -->
+        <!-- Lista de perfis -->
         <ul class="profiles">
-          <!-- Primeiro perfil: Linus T. - leva ao catálogo -->
+          <!-- Perfil 1 (ativo → abre catálogo) -->
           <li>
             <a href="catalogo/catalogo.html" class="profile" target="_blank">
               <figure>
                 <img
                   src="assets/profile-1.webp"
                   alt="Robô futurista com armadura metálica"
+                  width="84"
+                  height="84"
+                  loading="lazy"
                 />
                 <figcaption>Linus T.</figcaption>
               </figure>
             </a>
           </li>
-          <!-- Segundo perfil: Ada L. - perfil inativo (href="#") -->
+
+          <!-- Perfil 2 (inativo) -->
           <li>
             <a href="#" class="profile">
               <figure>
                 <img
                   src="assets/profile-2.webp"
-                  alt="Personagem estilo fantasia com capa verde, acompanhado por uma coruja"
+                  alt="Personagem fantasia com capa verde e coruja"
+                  width="84"
+                  height="84"
+                  loading="lazy"
                 />
                 <figcaption>Ada L.</figcaption>
               </figure>
             </a>
           </li>
-          <!-- Terceiro perfil: Alan T. - perfil inativo -->
+
+          <!-- Perfil 3 -->
           <li>
             <a href="#" class="profile">
               <figure>
                 <img
                   src="assets/profile-3.webp"
                   alt="Avatar de menino com cabelo curto"
+                  width="84"
+                  height="84"
+                  loading="lazy"
                 />
                 <figcaption>Alan T.</figcaption>
               </figure>
             </a>
           </li>
-          <!-- Quarto perfil: Tim B. - perfil inativo -->
+
+          <!-- Perfil 4 -->
           <li>
             <a href="#" class="profile">
               <figure>
                 <img
                   src="assets/profile-4.webp"
                   alt="Avatar de mulher com cabelo afro"
+                  width="84"
+                  height="84"
+                  loading="lazy"
                 />
                 <figcaption>Tim B.</figcaption>
               </figure>
@@ -76,8 +99,7 @@
       </section>
     </main>
 
-    <!-- Script JavaScript para funcionalidades interativas -->
+    <!-- Script JS (carregado após HTML) -->
     <script src="js/script.js" defer></script>
-    <!-- defer: executa o script após o HTML ser completamente carregado -->
   </body>
 </html>
